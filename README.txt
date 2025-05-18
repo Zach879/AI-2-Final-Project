@@ -1,0 +1,29 @@
+This project's setup assumes the user is running a Windows machine.
+The final comes with 20k samples loaded in SynthText_sub_resized_4yolo as an example, along with a small step1_chars dataset.
+In order to achieve results when training this model yourself, you will first need to generate larger sub-datasets. 
+To generate larger sub-datasets, here's the instructions with steps 1-4:
+
+1. Download the SynthText dataset from here: https://www.kaggle.com/datasets/wassefy/synthtext
+(WARNING! ~40GB)
+2. Unzip the SynthText dataset into the "final-project\datasets" directory. The dataset directory named "SynthText" should contain directories 
+	titled 1-200 and its corresponding gt.mat file.
+(WARNING! ~42GB)
+3. Generate the "step1_chars" dataset by running all cells sequentially within "chars dataset generator.ipynb ." You may have to modify the fourth cell's
+	"OUTPUT_ROOT" to be renamed to ""datasets/step1_chars." Ensure to set the third cell's "NUM_SAMPLES" accordingly.
+(WARNING! ~240MB with current settings)
+4. Generate the "SynthText_sub_resized_4yolo" dataset by running all cells sequentially within "Resized-Dataset Generator.ipynb ." You may have to modify the
+	first cell's "RESIZED_ROOT" to be renamed to "datasets/SynthText_sub_resized_4yolo." Ensure to set the first cell's "MAX_IMAGES" accordingly.
+(WARNING! ~7GB)
+
+5 (extra). This step is not necessary. However, in case the "SynthText_sub_resized" dataset is needed at any step, simply generate the "SynthText_sub_resized_4yolo" 
+	as laid out above in step 3, then rename the saved dataset to the subdirectory "SynthText_sub_resized_4yolo" instead.
+
+
+The files laid out in this directory are as follows:
+
+final-project.ipynb- The overview of the project. Contains descriptions about each respective step of development.
+
+Note: Before running the below files, ensure to follow the above steps (1-4) to download and unpack the SynthText dataset.
+chars dataset generator.ipynb- The dataset creation file necessary for running the first half (not intro) of the final-project Jupyter notebook.
+
+Resized-Dataset Generator.ipynb- The dataset creation file necessary for running the intro and final half portions of the final-project Jupyter notebook.
